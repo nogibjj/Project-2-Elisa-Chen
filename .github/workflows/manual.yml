@@ -1,0 +1,18 @@
+# This is a basic workflow that is manually triggered
+
+name: Bash Command Line
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: |
+        make install
+        make lint
+        make format

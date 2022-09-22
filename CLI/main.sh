@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-#create a function to repeat the process
-repeat() {
-    for i in `seq 1 $1`; do
-        echo $2
-    done
+#build a function to add two numbers - this is a placeholder function
+function add() {
+    echo $(( $1 + $2 ))
 }
 
-repeat $1 $2
+add $1 $2
+
+
+

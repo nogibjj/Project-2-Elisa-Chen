@@ -15,6 +15,6 @@ format:
 	black *.py CLI/*.sh
 
 lint:
-	pylint --disable=R,C CLI/*.sh
+	pylint --disable=R,C CLI
 
 all: install lint test

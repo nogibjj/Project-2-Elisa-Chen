@@ -12,7 +12,7 @@ test:
 #	python -m pytest -n auto --dist loadgroup -vv --cov=mylib testing/ 
 
 format:
-	black *.py CLI/*.sh
+	black CLI/*.sh
 
 lint:
 	pylint --disable=R,C CLI

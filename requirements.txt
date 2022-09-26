@@ -2,4 +2,4 @@ black
 numpy
 pandas
 pylint
-click
+click == 8.0.0

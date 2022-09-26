@@ -15,6 +15,6 @@ format:
 	black CLI/*.sh
 
 lint:
-	pylint --disable=R,C CLI
+	shellcheck --disable=R,C CLI
 
 all: install lint test

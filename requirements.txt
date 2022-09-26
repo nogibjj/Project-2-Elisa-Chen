@@ -1,5 +1,5 @@
 black
 numpy
 pandas
-pylint
+shellcheck
 click == 8.0.0

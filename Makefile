@@ -14,7 +14,7 @@ test:
 format:
 	black CLI/*.sh
 
-lint:
-	shellcheck --disable=R,C CLI
+#lint:
+#	shellcheck CLI/*.sh
 
-all: install lint test
+all: install test format #lint

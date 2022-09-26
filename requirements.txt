@@ -1,5 +1,4 @@
 black
 numpy
 pandas
-shellcheck
 click == 8.0.0

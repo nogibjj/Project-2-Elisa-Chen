@@ -9,10 +9,10 @@ function split_file() {
     SIZE=${2:-25M}
 
     # indicate whether header exists or not. By default it's true - OPTIONAL FIELD
-    HEADER=${3:true}
+    HEADER=${3:-true}
 
     # indicate whether you want the file shuffled or not. By default it's true - OPTIONAL FIELD
-    SHUFFLE=${4:true}
+    SHUFFLE=${4:-true}
 
     #take in the output file name. By default it'll take the file name and append _Part to it - OPTIONAL FIELD
     output_file=${5:-${FILENAME%.*}"_part."${FILENAME##*.}}
@@ -30,7 +30,7 @@ function split_file() {
     #touch split_data_files/$SHUFFLED_FILE
 
     #if shuffle is true, shuffle the file
-    if [[ $SHUFFLE -eq true ]]; then
+    if [[ $SHUFFLE == true ]]; then
         if [[ $HEADER == true ]]; then
         #if header is true, shuffle the file and save the header
             ( head -n 1 $FILENAME ; tail -n +1 $FILENAME|shuf ) > split_data_files/$SHUFFLED_FILE
@@ -44,8 +44,8 @@ function split_file() {
 
     #split the file
         #if header is true, split the file and save the header in each file
-    if [[ $HEADER = true ]]; then
-        tail -n +2 $SHUFFLED_FILE | split -b $size - --filter='sh -c "{ head -n1 $shuffled_file; cat; } > $FILE"' split_data_files${output_file}
+    if [[ $HEADER == true ]]; then
+        tail -n +2 $SHUFFLED_FILE | split -b $SIZE - --filter='sh -c "{ head -n1 $SHUFFLED_FILE; cat; } > $FILE"' split_data_files${output_file}
     else
         split -b $SIZE $SHUFFLED_FILE $output_file
     fi

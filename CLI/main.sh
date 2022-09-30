@@ -26,20 +26,20 @@ function split_file() {
         exit 1
     fi
 
-    mkdir split_data_files
+    mkdir part_data_files
 
     #if shuffle is true, shuffle the file
     if [[ $SHUFFLE == true ]]; then
         if [[ $HEADER == true ]]; then
         #if header is true, shuffle the file and save the header
-            ( head -n 1 $FILENAME ; tail -n +1 $FILENAME|shuf ) > split_data_files/$SHUFFLED_FILE
+            ( head -n 1 $FILENAME ; tail -n +1 $FILENAME|shuf ) > part_data_files/$SHUFFLED_FILE
         fi
     else
         #if header is false, shuffle the file
-        shuf $FILENAME > split_data_files/$SHUFFLED_FILE
+        shuf $FILENAME > part_data_files/$SHUFFLED_FILE
     fi
 
-    cd split_data_files
+    cd part_data_files
 
     #if header is true, split the file and save the header in each file
     if [[ $HEADER == true ]]; then
@@ -51,6 +51,7 @@ function split_file() {
     #remove the shuffled file
     rm $SHUFFLED_FILE
     echo "Data File Split Complete!"
+    cd ..
 }
 
 split_file $1 $2 $3 $4 $5

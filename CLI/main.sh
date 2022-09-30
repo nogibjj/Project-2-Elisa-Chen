@@ -33,19 +33,19 @@ function split_file() {
         if [[ $HEADER == true ]]; then
         #if header is true, shuffle the file and save the header
             ( head -n 1 $FILENAME ; tail -n +1 $FILENAME|shuf ) > split_data_files/$SHUFFLED_FILE
-        else
-            #if header is false, shuffle the file
-            shuf $FILENAME > split_data_files/$SHUFFLED_FILE
         fi
+    else
+        #if header is false, shuffle the file
+        shuf $FILENAME > split_data_files/$SHUFFLED_FILE
     fi
 
     cd split_data_files
 
     #if header is true, split the file and save the header in each file
     if [[ $HEADER == true ]]; then
-        tail -n +2 $SHUFFLED_FILE | split -b $SIZE - --filter='sh -c "{ head -n1 '$SHUFFLED_FILE'; cat; } > $FILE"' ${output_file}
+        tail -n +2 $SHUFFLED_FILE | split -C $SIZE - --filter='sh -c "{ head -n1 '$SHUFFLED_FILE'; cat; } > $FILE"' ${output_file}
     else
-        split -b $SIZE $SHUFFLED_FILE $output_file
+        split -C $SIZE $SHUFFLED_FILE $output_file
     fi
 
     #remove the shuffled file

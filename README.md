@@ -9,10 +9,10 @@ This is a repository for a CLI Tool that takes in a data input and partitions it
 Remember to add a graph
 
 ## Motivation
-We are provided a vast amount of data in today's digital world. This has enabled us as humans to make better decisions and to expand our capabilities in high-tech like AI and Machine Learning. However, at times, we might need to partition our data into smaller parts due to convenience or for processing purposes:
+We are provided a vast amount of data in today's digital world. This has enabled us as humans to make better decisions and to expand our capabilities in AI and Machine Learning. However, at times, we might need to partition our data into smaller parts for convenience or for processing purposes:
 1. Certain systems / platforms have limitations on the size of data they can send / receive (EX: emails can typically only attach 25MB worth of data, Standard GitHub can only commit up to 100Mb worth of data)
 2. Data Scientists might want to partition data for cross-validation or general model testing purposes
-3. Easier control over data pipelines if input files are distributed (EX: any corrupted files can be removed without breaking the whole pipeline)
+3. Data Engineers can control data pipelines better if input files are distributed (EX: any corrupted files can be removed without breaking the whole pipeline)
 
 ## Instructions To Use The CLI Tool
 To run the function, simply type in `docker something something main.sh *filename* *filesize* *header* *shuffle* *prefix*` where
@@ -22,7 +22,10 @@ To run the function, simply type in `docker something something main.sh *filenam
 - `shuffle` is a "boolean" that is used to denote whether the partitioned files should be shuffled or not. By default the value is set to true, which means that before the file is partitioned into smaller chunks, the rows of the data body (not included header if it exists) are shuffled. 
 - `prefix` is a parameter that can be used to name the prefix of the partitioned files. By default it's set to `filename`_part. As an example, if the file that is partitioned is called `sample.csv`, then the first three partitioned files would be called `sample_part.aa`, `sample_part.ab`, `sample_part.ac`
 
+An example command could be `docker something something main.sh sample.csv 100M true false custom_prefix.` which would partition the sample file into 100MB chunk files in the order they appear in the original file, each file named as custom_prefix.xx
+
 ## TODO
 1. Test the docker thing in cloud9. Maybe bring a big data source to ECR and then apply this command tool to it.
-2. Finish writing up read me (add the diagram)
-3. Record final demo
+2. Update docker link
+3. Finish writing up read me (add the diagram)
+4. Record final demo

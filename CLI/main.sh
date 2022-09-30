@@ -49,7 +49,8 @@ function split_file() {
     fi
 
     #remove the shuffled file
-    #rm $SHUFFLED_FILE
+    rm $SHUFFLED_FILE
+    echo "Data File Split Complete!"
 }
 
 split_file $1 $2 $3 $4 $5

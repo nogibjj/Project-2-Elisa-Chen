@@ -24,5 +24,6 @@ To run the function, simply type in `docker something something main.sh *filenam
 
 ## TODO
 1. Test the docker thing in cloud9. Maybe bring a big data source to ECR and then apply this command tool to it.
-2. Finish writing up read me (add the diagram)
-3. Record final demo
+2. Update docker link
+3. Finish writing up read me (add the diagram)
+4. Record final demo

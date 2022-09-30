@@ -22,7 +22,7 @@ To run the function, simply type in `docker something something main.sh *filenam
 - `shuffle` is a "boolean" that is used to denote whether the partitioned files should be shuffled or not. By default the value is set to true, which means that before the file is partitioned into smaller chunks, the rows of the data body (not included header if it exists) are shuffled. 
 - `prefix` is a parameter that can be used to name the prefix of the partitioned files. By default it's set to `filename`_part. As an example, if the file that is partitioned is called `sample.csv`, then the first three partitioned files would be called `sample_part.aa`, `sample_part.ab`, `sample_part.ac`
 
-An example call could be `docker something something main.sh sample.csv 100M true false custom_prefix.` which would partition the sample file into 100MB chunk files in the order they appear in the original file, each file named as custom_prefix.xx
+An example command could be `docker something something main.sh sample.csv 100M true false custom_prefix.` which would partition the sample file into 100MB chunk files in the order they appear in the original file, each file named as custom_prefix.xx
 
 ## TODO
 1. Test the docker thing in cloud9. Maybe bring a big data source to ECR and then apply this command tool to it.

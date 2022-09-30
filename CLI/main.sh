@@ -15,7 +15,7 @@ function split_file() {
     SHUFFLE=${4:-true}
 
     #take in the output file name. By default it'll take the file name and append _Part to it - OPTIONAL FIELD
-    output_file=${5:-${FILENAME%.*}"_part."${FILENAME##*.}}
+    output_file=${5:-${FILENAME%.*}"_part."}
 
     #name of shuffled file
     SHUFFLED_FILE="shuffled_file."${FILENAME##*.}
@@ -27,7 +27,6 @@ function split_file() {
     fi
 
     mkdir split_data_files
-    #touch split_data_files/$SHUFFLED_FILE
 
     #if shuffle is true, shuffle the file
     if [[ $SHUFFLE == true ]]; then
@@ -42,17 +41,15 @@ function split_file() {
 
     cd split_data_files
 
-    #split the file
-        #if header is true, split the file and save the header in each file
+    #if header is true, split the file and save the header in each file
     if [[ $HEADER == true ]]; then
-        tail -n +2 $SHUFFLED_FILE | split -b $SIZE - --filter='sh -c "{ head -n1 $SHUFFLED_FILE; cat; } > $FILE"' split_data_files${output_file}
+        tail -n +2 $SHUFFLED_FILE | split -b $SIZE - --filter='sh -c "{ head -n1 '$SHUFFLED_FILE'; cat; } > $FILE"' ${output_file}
     else
         split -b $SIZE $SHUFFLED_FILE $output_file
     fi
 
     #remove the shuffled file
-    rm $SHUFFLED_FILE
-    cd ..
+    #rm $SHUFFLED_FILE
 }
 
 split_file $1 $2 $3 $4 $5

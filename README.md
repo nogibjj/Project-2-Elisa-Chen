@@ -9,7 +9,7 @@ This is a repository for a CLI Tool that takes in a data input and partitions it
 Remember to add a graph
 
 ## Motivation
-We are provided a vast amount of data in today's digital world. This has enabled us as humans to make better decisions and to expand our capabilities in high-tech like AI and Machine Learning. However, at times, we might need to partition our data into smaller parts due to convenience or for processing purposes:
+We are provided a vast amount of data in today's digital world. This has enabled us as humans to make better decisions and to expand our capabilities in AI and Machine Learning. However, at times, we might need to partition our data into smaller parts for convenience or for processing purposes:
 1. Certain systems / platforms have limitations on the size of data they can send / receive (EX: emails can typically only attach 25MB worth of data, Standard GitHub can only commit up to 100Mb worth of data)
 2. Data Scientists might want to partition data for cross-validation or general model testing purposes
 3. Easier control over data pipelines if input files are distributed (EX: any corrupted files can be removed without breaking the whole pipeline)

@@ -3,18 +3,9 @@ install:
 		pip install -r requirements.txt
 
 test:
-	python -m pytest -vv test_hello.py
+	./test.sh
 
-#profile-test-code:
-#	python -m pytest -vv --durations=1 --durations-min=1.0
+lint:
+	docker run --rm -i hadolint/hadolint < Dockerfile 
 
-#parallel-test:
-#	python -m pytest -n auto --dist loadgroup -vv --cov=mylib testing/ 
-
-format:
-	black CLI/*.sh
-
-#lint:
-#	shellcheck CLI/*.sh
-
-all: install test format #lint
+all: install test lint

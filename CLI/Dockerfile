@@ -2,4 +2,5 @@ FROM alpine:latest
 RUN apk update && apk add bash
 
 WORKDIR /app
-COPY main.sh /app
+COPY . .
+ENTRYPOINT [ "split" ]

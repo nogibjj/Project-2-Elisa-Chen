@@ -6,6 +6,6 @@ test:
 	./test.sh
 
 lint:
-	docker run --rm -i hadolint/hadolint < ./CLI/main.sh 
+	docker run --rm -i hadolint/hadolint < Dockerfile
 
-all: install test lint
+all: install test

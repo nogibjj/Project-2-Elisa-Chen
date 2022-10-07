@@ -1,4 +1,4 @@
-[![Bash Command Line](https://github.com/nogibjj/Project-2-Elisa-Chen/actions/workflows/manual.yml/badge.svg)](https://github.com/nogibjj/Project-2-Elisa-Chen/actions/workflows/manual.yml)
+[![Bash Command Line](https://github.com/nogibjj/Project-2-Elisa-Chen/actions/workflows/manual.yml/badge.svg?branch=main)](https://github.com/nogibjj/Project-2-Elisa-Chen/actions/workflows/manual.yml)
 # Project-2-Elisa-Chen
 This project was built as part of IDS 706 Data Engineering Class at Duke University. The overall task was to build a Bash command-line tool that performs a useful data preparation task such as truncating data, sorting it, cleaning data, or doing ETL. 
 

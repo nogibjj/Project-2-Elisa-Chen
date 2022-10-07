@@ -6,7 +6,7 @@ This project was built as part of IDS 706 Data Engineering Class at Duke Univers
 This is a repository for a CLI Tool that takes in a data input and partitions it into smaller datasets. 
 
 ## Architecture
-Remember to add a graph
+![Project 2 - Flowchart - Page 1](https://user-images.githubusercontent.com/25168588/194604306-d540d269-7d3b-4170-bc5c-71473a65b25a.png)
 
 ## Motivation
 We are provided a vast amount of data in today's digital world. This has enabled us as humans to make better decisions and to expand our capabilities in AI and Machine Learning. However, at times, we might need to partition our data into smaller parts for convenience or for processing purposes:
